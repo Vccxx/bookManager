@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package name="BookManager" extends="struts-default">
+        <action name="search" class="search" method="searchAuthorInfo">
+            <result name="success">authorInfo.jsp</result>
+            <result name="error">errorPage.jsp</result>
+            <result name="noBook">noBook.jsp</result>
+            <result name="noAuthor">noAuthor.jsp</result>
+        </action>
+        <action name="RequestAddAuthor">
+            <result>addAuthor.jsp</result>
+        </action>
+        <action name="addAuthor" class="addAuthor" method="add">
+            <result name="success">successPage.jsp</result>
+            <result name="error">errorPage.jsp</result>
+        </action>
+        <action name="addBook" class="addBook" method="add">
+            <result name="noAuthor">noAuthor.jsp</result>
+            <result name="success">successPage.jsp</result>
+            <result name="error">errorPage.jsp</result>
+            <result name="noBook">RequestAddBook.jsp</result>
+            <result name="update">bookUpdate.jsp</result>
+        </action>
+    <action name="deleteBook" class="deleteBook" method="delete">
+        <result name="error">errorPage.jsp</result>
+        <result name="success">successPage.jsp</result>
+    </action>
+        <action name="detailInfo" class="detailInfo" method="query">
+            <result name="success">detailInfo.jsp</result>
+            <result name="error">errorPage.jsp</result>
+        </action>
+        <action name="updateBook" class="updateBook" method="update">
+            <result name="noAuthor">noAuthor.jsp</result>
+            <result name="error">errorPage.jsp</result>
+            <result name="success">successPage.jsp</result>
+        </action>
+    </package>
+</struts>
